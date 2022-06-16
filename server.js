@@ -6,13 +6,13 @@ let socketIO = require('socket.io');
 let app = express();
 let server = http.Server(app);
 let io = socketIO(server);
-app.set('port', 5000);
+app.set('port', 8080);
 app.use('/static', express.static(__dirname + '/static'));
 
 app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'index.html'));
 });
-server.listen(5000, function() {
+server.listen(8080, function() {
   console.log('Starting server on port 5000');
 });
 let players = {};
